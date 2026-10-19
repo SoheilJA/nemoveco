@@ -150,17 +150,17 @@ void main() {
 
 const THEMES = {
   light: {
-    a: new THREE.Color('#a5781f'),
-    b: new THREE.Color('#3d6a55'),
-    line: new THREE.Color('#35594a'),
+    a: new THREE.Color('#a1a1aa'),
+    b: new THREE.Color('#10b981'),
+    line: new THREE.Color('#d4d4d8'),
     blending: THREE.NormalBlending,
     opacity: 0.9,
     lineOpacity: 0.34,
   },
   dark: {
-    a: new THREE.Color('#eccf8a'),
-    b: new THREE.Color('#58b28c'),
-    line: new THREE.Color('#caa14e'),
+    a: new THREE.Color('#fafafa'),
+    b: new THREE.Color('#34d399'),
+    line: new THREE.Color('#a1a1aa'),
     blending: THREE.AdditiveBlending,
     opacity: 0.95,
     lineOpacity: 0.3,

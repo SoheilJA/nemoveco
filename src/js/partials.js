@@ -101,9 +101,9 @@ function headerHTML(currentPage) {
 
         <div class="flex items-center gap-2.5">
           <button id="theme-toggle" type="button" class="theme-toggle relative flex h-10 w-[4.4rem] items-center rounded-full border border-glassline bg-surface2 px-1 backdrop-blur-md" aria-label="تغییر حالت روشن و تاریک">
-            <span class="theme-knob absolute top-1/2 h-8 w-8 -translate-y-1/2 rounded-full bg-gradient-to-br from-gold-soft to-gold shadow-gold transition-[inset-inline-start] duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] start-1 dark:start-[calc(100%-2.25rem)]">
-              <span class="absolute inset-0 grid place-items-center text-ink dark:hidden">${icons.sun}</span>
-              <span class="absolute inset-0 hidden place-items-center text-[#1a1610] dark:grid">${icons.moon}</span>
+            <span class="theme-knob absolute top-1/2 h-8 w-8 -translate-y-1/2 rounded-full bg-gradient-to-br from-zinc-200 to-zinc-400 dark:from-zinc-600 dark:to-zinc-800 shadow-sm transition-[inset-inline-start] duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] start-1 dark:start-[calc(100%-2.25rem)]">
+              <span class="absolute inset-0 grid place-items-center text-zinc-900 dark:hidden">${icons.sun}</span>
+              <span class="absolute inset-0 hidden place-items-center text-zinc-50 dark:grid">${icons.moon}</span>
             </span>
           </button>
           <a href="contact.html" class="btn-gold shimmer hidden !py-2.5 !px-5 text-sm md:inline-flex">شروع تغییر</a>

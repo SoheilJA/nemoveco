@@ -11,7 +11,7 @@ export function getTheme() {
 function apply(theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark')
   document.documentElement.dataset.theme = theme
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0a131c' : '#f6f1e6')
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#09090b' : '#ffffff')
 }
 
 export function toggleTheme() {
