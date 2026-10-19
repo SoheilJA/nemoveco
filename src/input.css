@@ -1,0 +1,900 @@
+/* ==========================================================================
+   NEMO (نمو) — Design System
+   Tailwind CSS v4 entry — compiled locally to assets/css/styles.css
+   Theme: light = warm ivory/pearl + champagne gold · dark = midnight + glow
+   ========================================================================== */
+
+@import "tailwindcss";
+
+/* Class-based dark mode (toggled on <html>, persisted in localStorage) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* --------------------------------------------------------------------------
+   Local fonts — Vazirmatn variable (arabic subset covers Persian + ۰-۹)
+   NOTE: never apply letter-spacing to Persian (it breaks joined glyphs).
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/vazirmatn-arabic.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF,
+    U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC,
+    U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32,
+    U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F,
+    U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62,
+    U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E,
+    U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/vazirmatn-latin.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* --------------------------------------------------------------------------
+   Runtime theme variables (flipped by .dark on <html>)
+   -------------------------------------------------------------------------- */
+:root {
+  /* surfaces */
+  --n-bg: #f6f1e6;            /* warm ivory */
+  --n-bg-soft: #fbf7ee;       /* pearl */
+  --n-surface: rgba(255, 255, 255, 0.6);
+  --n-surface-2: rgba(255, 255, 255, 0.38);
+  --n-glassline: rgba(156, 118, 31, 0.26);
+  --n-highlight: rgba(255, 255, 255, 0.6);
+  --n-line: rgba(23, 38, 48, 0.14);
+
+  /* ink */
+  --n-ink: #172630;
+  --n-ink-soft: rgba(23, 38, 48, 0.74);
+  --n-ink-faint: rgba(23, 38, 48, 0.56);
+
+  /* accents (gold = AA on ivory) */
+  --n-gold: #97701c;
+  --n-gold-deep: #7a5812;
+  --n-gold-soft: #c9a35c;
+  --n-emerald: #2f6250;
+  --n-sage: #7ba389;
+
+  /* deep bands (CTA, stats, footer) */
+  --n-deep: #14232e;
+  --n-deep-2: #1b2f3c;
+  --n-deep-line: rgba(236, 227, 208, 0.14);
+  --n-ondeep: #ede5d2;
+  --n-ondeep-soft: rgba(237, 229, 210, 0.68);
+
+  /* shadows */
+  --n-shadow: 0 30px 60px -32px rgba(23, 38, 48, 0.42), 0 6px 18px -10px rgba(23, 38, 48, 0.16);
+  --n-shadow-deep: 0 40px 90px -36px rgba(10, 19, 28, 0.55);
+  --n-shadow-gold: 0 18px 44px -18px rgba(156, 118, 31, 0.55);
+
+  /* aurora blobs */
+  --n-aurora-a: rgba(201, 163, 92, 0.55);
+  --n-aurora-b: rgba(123, 163, 137, 0.42);
+  --n-aurora-c: rgba(70, 109, 133, 0.26);
+
+  /* grain */
+  --n-grain: 0.05;
+
+  /* three.js scene colors */
+  --n-scene-gold: #b08727;
+  --n-scene-emerald: #3d6a55;
+  --n-scene-line: #35594a;
+
+  /* buttons */
+  --n-btn-ink: #fbf7ec;
+}
+
+.dark {
+  --n-bg: #0a131c;
+  --n-bg-soft: #0e1a26;
+  --n-surface: rgba(18, 32, 46, 0.52);
+  --n-surface-2: rgba(18, 32, 46, 0.32);
+  --n-glassline: rgba(215, 181, 106, 0.26);
+  --n-highlight: rgba(255, 255, 255, 0.05);
+  --n-line: rgba(236, 227, 208, 0.13);
+
+  --n-ink: #ece3d0;
+  --n-ink-soft: rgba(236, 227, 208, 0.72);
+  --n-ink-faint: rgba(236, 227, 208, 0.5);
+
+  --n-gold: #d7b56a;
+  --n-gold-deep: #b8944a;
+  --n-gold-soft: #e8cd8c;
+  --n-emerald: #6fae8f;
+  --n-sage: #89b79c;
+
+  --n-deep: #0d1a26;
+  --n-deep-2: #122131;
+  --n-deep-line: rgba(236, 227, 208, 0.13);
+  --n-ondeep: #ede5d2;
+  --n-ondeep-soft: rgba(237, 229, 210, 0.66);
+
+  --n-shadow: 0 34px 70px -34px rgba(0, 0, 0, 0.75), 0 6px 18px -10px rgba(0, 0, 0, 0.5);
+  --n-shadow-deep: 0 40px 90px -36px rgba(0, 0, 0, 0.8);
+  --n-shadow-gold: 0 18px 48px -16px rgba(215, 181, 106, 0.35);
+
+  --n-aurora-a: rgba(188, 141, 60, 0.34);
+  --n-aurora-b: rgba(70, 140, 105, 0.3);
+  --n-aurora-c: rgba(48, 90, 130, 0.3);
+
+  --n-grain: 0.08;
+
+  --n-scene-gold: #eccf8a;
+  --n-scene-emerald: #58b28c;
+  --n-scene-line: #caa14e;
+
+  --n-btn-ink: #1a1610;
+}
+
+/* --------------------------------------------------------------------------
+   Tailwind theme tokens (inline → utilities follow runtime vars)
+   -------------------------------------------------------------------------- */
+@theme inline {
+  --font-sans: "Vazirmatn", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream: var(--n-bg);
+  --color-pearl: var(--n-bg-soft);
+  --color-surface: var(--n-surface);
+  --color-surface2: var(--n-surface-2);
+  --color-glassline: var(--n-glassline);
+
+  --color-ink: var(--n-ink);
+  --color-ink-soft: var(--n-ink-soft);
+  --color-ink-faint: var(--n-ink-faint);
+
+  --color-gold: var(--n-gold);
+  --color-gold-deep: var(--n-gold-deep);
+  --color-gold-soft: var(--n-gold-soft);
+  --color-emerald: var(--n-emerald);
+  --color-sage: var(--n-sage);
+
+  --color-deep: var(--n-deep);
+  --color-deep2: var(--n-deep-2);
+  --color-ondeep: var(--n-ondeep);
+  --color-ondeep-soft: var(--n-ondeep-soft);
+  --color-deepline: var(--n-deep-line);
+
+  --color-line: var(--n-line);
+
+  --shadow-soft: var(--n-shadow);
+  --shadow-deep: var(--n-shadow-deep);
+  --shadow-gold: var(--n-shadow-gold);
+}
+
+@theme {
+  --animate-aurora: aurora 26s ease-in-out infinite alternate;
+  --animate-aurora-b: aurora-b 38s ease-in-out infinite alternate;
+  --animate-float: floaty 7s ease-in-out infinite;
+  --animate-float-slow: floaty 12s ease-in-out infinite;
+  --animate-marquee: marquee 44s linear infinite;
+  --animate-spin-slow: spin 16s linear infinite;
+  --animate-pulse-soft: pulse-soft 3.4s ease-in-out infinite;
+  --animate-breathe: breathe 5.5s ease-in-out infinite;
+  --animate-pin-pulse: pin-pulse 2.4s ease-out infinite;
+  --animate-drift-up: drift-up 16s linear infinite;
+  --animate-dash-draw: dash-draw 1.6s ease forwards;
+  --animate-fade-in: fade-in 0.5s ease forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Keyframes (transform/opacity only — compositor friendly)
+   -------------------------------------------------------------------------- */
+@keyframes aurora {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(6%, 5%, 0) scale(1.12); }
+  100% { transform: translate3d(-5%, 7%, 0) scale(0.96); }
+}
+@keyframes aurora-b {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-7%, -5%, 0) scale(1.08); }
+  100% { transform: translate3d(5%, -8%, 0) scale(1.14); }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.045); opacity: 1; }
+}
+@keyframes pin-pulse {
+  0% { transform: scale(0.35); opacity: 0.9; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+@keyframes drift-up {
+  0% { transform: translateY(16px) scale(0.7); opacity: 0; }
+  12% { opacity: 0.8; }
+  88% { opacity: 0.5; }
+  100% { transform: translateY(-110px) scale(1.05); opacity: 0; }
+}
+@keyframes dash-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes preloader-safety {
+  to { opacity: 0; visibility: hidden; }
+}
+@keyframes sprout-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes shimmer-slide {
+  0% { transform: translateX(-140%) skewX(-18deg); }
+  100% { transform: translateX(240%) skewX(-18deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Custom utilities
+   -------------------------------------------------------------------------- */
+@utility glass {
+  background: var(--n-surface);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid var(--n-glassline);
+  box-shadow: var(--n-shadow), inset 0 1px 0 var(--n-highlight);
+}
+
+@utility glass-soft {
+  background: var(--n-surface-2);
+  backdrop-filter: blur(14px) saturate(1.35);
+  -webkit-backdrop-filter: blur(14px) saturate(1.35);
+  border: 1px solid var(--n-glassline);
+}
+
+@utility text-gradient-gold {
+  background: linear-gradient(105deg, var(--n-gold-soft), var(--n-gold) 45%, var(--n-gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--n-btn-ink);
+  background: linear-gradient(120deg, var(--n-gold-soft), var(--n-gold) 55%, var(--n-gold-deep));
+  box-shadow: var(--n-shadow-gold), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, filter 0.35s ease;
+  isolation: isolate;
+  &:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.08) brightness(1.03);
+    box-shadow: 0 22px 52px -16px var(--n-gold-soft), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  &:active { transform: translateY(0) scale(0.985); }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--n-ink);
+  background: var(--n-surface);
+  border: 1px solid var(--n-glassline);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--n-gold);
+    color: var(--n-gold);
+  }
+  &:active { transform: translateY(0) scale(0.985); }
+}
+
+/* shimmering light sweep on CTA buttons */
+@utility shimmer {
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    width: 45%;
+    inset-inline-start: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    transform: translateX(-140%) skewX(-18deg);
+    animation: shimmer-slide 3.2s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+@utility field {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  border-radius: 1rem;
+  background: var(--n-surface-2);
+  border: 1px solid var(--n-line);
+  color: var(--n-ink);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  &::placeholder { color: var(--n-ink-faint); }
+  &:focus {
+    outline: none;
+    border-color: var(--n-gold);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--n-gold) 22%, transparent);
+  }
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--n-gold);
+}
+
+@utility tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@utility latin {
+  font-family: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: auto;
+    scrollbar-gutter: stable;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: clip;
+  }
+  html.dark { color-scheme: dark; }
+
+  body {
+    background-color: var(--n-bg);
+    color: var(--n-ink);
+    font-family: var(--font-sans);
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4 { line-height: 1.35; font-weight: 800; }
+
+  ::selection { background: var(--n-gold-soft); color: #172630; }
+
+  :focus-visible {
+    outline: 2px solid var(--n-gold);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* elegant thin scrollbar */
+  * { scrollbar-width: thin; scrollbar-color: var(--n-gold-soft) transparent; }
+  ::-webkit-scrollbar { width: 9px; height: 9px; }
+  ::-webkit-scrollbar-track { background: var(--n-bg); }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--n-gold) 55%, var(--n-bg));
+    border-radius: 99px;
+    border: 2px solid var(--n-bg);
+  }
+
+  img, svg { display: inline-block; vertical-align: middle; }
+}
+
+/* --------------------------------------------------------------------------
+   Ambient layers: aurora blobs + film grain (both theme aware)
+   -------------------------------------------------------------------------- */
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(46px);
+  opacity: 0.9;
+  mix-blend-mode: normal;
+  will-change: transform;
+}
+.aurora-a {
+  width: clamp(420px, 55vw, 900px);
+  aspect-ratio: 1;
+  background: radial-gradient(closest-side, var(--n-aurora-a), transparent 72%);
+  animation: var(--animate-aurora);
+}
+.aurora-b {
+  width: clamp(360px, 45vw, 720px);
+  aspect-ratio: 1;
+  background: radial-gradient(closest-side, var(--n-aurora-b), transparent 72%);
+  animation: var(--animate-aurora-b);
+}
+.aurora-c {
+  width: clamp(300px, 38vw, 640px);
+  aspect-ratio: 1;
+  background: radial-gradient(closest-side, var(--n-aurora-c), transparent 72%);
+  animation: var(--animate-aurora);
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: var(--n-grain);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* --------------------------------------------------------------------------
+   Preloader (markup lives in every page; shown only when JS is on)
+   -------------------------------------------------------------------------- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--n-bg);
+}
+html.js .preloader { display: flex; }
+html.js .preloader { animation: preloader-safety 0.7s ease 9s forwards; }
+.preloader .sprout-path {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: sprout-draw 1.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.preloader .sprout-path.p2 { animation-delay: 0.25s; }
+.preloader .sprout-path.p3 { animation-delay: 0.45s; }
+.preloader .preloader-word {
+  opacity: 0;
+  animation: fade-in 0.6s ease 0.7s forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Page transition curtain
+   -------------------------------------------------------------------------- */
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  pointer-events: none;
+  visibility: hidden;
+}
+.page-curtain span {
+  background: linear-gradient(180deg, var(--n-deep), var(--n-deep-2));
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.page-curtain::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(to left, transparent, var(--n-gold-soft), transparent);
+  opacity: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+.nav-shell {
+  transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease,
+    box-shadow 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+.nav-shell.is-scrolled {
+  background: var(--n-surface);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border-bottom-color: var(--n-glassline);
+  box-shadow: 0 12px 40px -22px rgba(10, 19, 28, 0.45);
+}
+.brand-wordmark { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+.nav-shell.is-scrolled .brand-wordmark { transform: scale(0.9); }
+
+/* mega menu */
+.mega-panel {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.35s;
+}
+.mega-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.mega-link {
+  position: relative;
+  transition: color 0.25s ease, padding-inline-start 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mega-link::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 2px;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(to left, var(--n-gold-soft), var(--n-gold));
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mega-link:hover { color: var(--n-gold); }
+.mega-link:hover::before { width: 100%; }
+
+/* mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  background: var(--n-bg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+html.menu-open .mobile-menu { opacity: 1; visibility: visible; }
+html.menu-open, html.menu-open body { overflow: hidden; }
+.mobile-menu .m-link {
+  opacity: 0;
+  transform: translateY(22px);
+}
+html.menu-open .mobile-menu .m-link {
+  animation: fade-in 0.5s ease forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Marquee (mechanism dir=ltr; items keep Persian text)
+   -------------------------------------------------------------------------- */
+.marquee { direction: ltr; overflow: hidden; }
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: var(--animate-marquee);
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* --------------------------------------------------------------------------
+   Cursor follower (desktop only, injected by JS)
+   -------------------------------------------------------------------------- */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 210;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+}
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--n-gold);
+  margin: -3.5px 0 0 -3.5px;
+}
+.cursor-ring {
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
+  border: 1.5px solid color-mix(in srgb, var(--n-gold) 65%, transparent);
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.cursor-ring.is-active {
+  width: 66px;
+  height: 66px;
+  margin: -33px 0 0 -33px;
+  border-color: color-mix(in srgb, var(--n-gold) 90%, transparent);
+  background: color-mix(in srgb, var(--n-gold) 12%, transparent);
+}
+html.has-cursor .cursor-dot, html.has-cursor .cursor-ring { opacity: 1; }
+
+/* --------------------------------------------------------------------------
+   WebGL scenes + graceful fallback
+   -------------------------------------------------------------------------- */
+.scene-wrap { position: relative; }
+.scene-wrap canvas { display: block; width: 100%; height: 100%; }
+.scene-wrap .scene-fallback { display: none; }
+.scene-wrap.scene-off canvas { display: none; }
+.scene-wrap.scene-off .scene-fallback { display: flex; }
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+.field-msg {
+  font-size: 0.75rem;
+  color: #c0392b;
+  margin-top: 0.35rem;
+  display: none;
+}
+.dark .field-msg { color: #ef9a8f; }
+.field-invalid .field { border-color: #c0392b; box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.14); }
+.field-invalid .field-msg { display: block; }
+
+/* form success check overlay */
+.form-success {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--n-bg) 86%, transparent);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+.form-success.show { opacity: 1; visibility: visible; }
+.form-success .check-path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+}
+.form-success.show .check-path { animation: dash-draw 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s forwards; }
+
+/* --------------------------------------------------------------------------
+   Testimonials slider
+   -------------------------------------------------------------------------- */
+.t-viewport { overflow: hidden; direction: ltr; }
+.t-track { display: flex; direction: rtl; will-change: transform; }
+.t-slide { flex: 0 0 100%; }
+.t-track.is-dragging { cursor: grabbing; }
+
+/* --------------------------------------------------------------------------
+   Scroll progress hairline
+   -------------------------------------------------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2.5px;
+  z-index: 85;
+  transform-origin: right;
+  background: linear-gradient(to left, var(--n-gold-soft), var(--n-gold), var(--n-gold-deep));
+  transform: scaleX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Story vine + counters ring
+   -------------------------------------------------------------------------- */
+.story-vine path {
+  stroke-dasharray: var(--dash, 600);
+  stroke-dashoffset: var(--dash, 600);
+}
+
+/* --------------------------------------------------------------------------
+   Nav buttons (header)
+   -------------------------------------------------------------------------- */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.55rem 1.05rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--n-ink-soft);
+  transition: color 0.25s ease, background 0.25s ease;
+}
+.nav-btn:hover { color: var(--n-ink); background: var(--n-surface-2); }
+.nav-btn.is-active { color: var(--n-gold); background: var(--n-surface-2); }
+
+/* --------------------------------------------------------------------------
+   Chips (filters) + system pills
+   -------------------------------------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--n-ink-soft);
+  background: var(--n-surface-2);
+  border: 1px solid var(--n-line);
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.chip:hover { color: var(--n-gold); border-color: var(--n-glassline); transform: translateY(-1px); }
+.chip.is-on {
+  background: linear-gradient(120deg, var(--n-gold-soft), var(--n-gold) 60%, var(--n-gold-deep));
+  color: var(--n-btn-ink);
+  border-color: transparent;
+  box-shadow: var(--n-shadow-gold);
+}
+
+.sys-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--n-ink);
+  background: var(--n-surface);
+  border: 1px solid var(--n-glassline);
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.sys-chip:hover { transform: translateY(-2px); border-color: var(--n-gold); color: var(--n-gold); }
+
+/* --------------------------------------------------------------------------
+   Testimonials slider extras
+   -------------------------------------------------------------------------- */
+.t-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--n-line);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.t-dot.is-on { background: var(--n-gold); transform: scale(1.35); }
+
+.t-progress-track {
+  height: 3px;
+  border-radius: 99px;
+  background: var(--n-line);
+  overflow: hidden;
+}
+.t-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to left, var(--n-gold-soft), var(--n-gold));
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+/* --------------------------------------------------------------------------
+   Projects modal
+   -------------------------------------------------------------------------- */
+#project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: color-mix(in srgb, var(--n-deep) 55%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#project-modal.open { display: flex; }
+.project-dialog {
+  width: min(680px, 100%);
+  max-height: min(82vh, 720px);
+  overflow-y: auto;
+  background: var(--n-bg);
+  border: 1px solid var(--n-glassline);
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  box-shadow: var(--n-shadow-deep);
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Misc
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  inset-inline-start: 10px;
+  z-index: 300;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  background: var(--n-gold);
+  color: #fbf7ec;
+  font-weight: 700;
+  transform: translateY(-260%);
+  transition: transform 0.3s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+
+.logos-mask { mask-image: linear-gradient(to right, transparent, black 14%, black 86%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 14%, black 86%, transparent); }
+
+.badge-tile { aspect-ratio: 4 / 3; }
+
+.vine-divider {
+  display: block;
+  width: 100%;
+  height: clamp(48px, 7vw, 110px);
+}
+.vine-divider path { fill: var(--fill, var(--n-bg-soft)); }
+
+/* shimmering conic border for featured cards */
+@property --shimmer-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.conic-border {
+  position: relative;
+  isolation: isolate;
+}
+.conic-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--shimmer-angle),
+    transparent 0deg,
+    color-mix(in srgb, var(--n-gold) 70%, transparent) 60deg,
+    transparent 130deg,
+    color-mix(in srgb, var(--n-emerald) 55%, transparent) 200deg,
+    transparent 300deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: conic-rotate 6s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes conic-rotate {
+  to { --shimmer-angle: 360deg; }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — calm everything down
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .aurora, .marquee-track { animation: none !important; }
+  html.js .preloader { animation: none !important; }
+}
