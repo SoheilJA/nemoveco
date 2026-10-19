@@ -1,0 +1,29 @@
+{
+  "name": "nemo-consulting",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Nemo (نمو) — luxury Persian business-management consulting static website (front-end only)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "build:css": "tailwindcss -i src/input.css -o assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i src/input.css -o assets/css/styles.css --watch",
+    "build:js": "node scripts/build.mjs",
+    "copy:fonts": "node scripts/copy-fonts.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/vazirmatn": "^5.2.5",
+    "animejs": "^4.0.2",
+    "gsap": "^3.13.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
