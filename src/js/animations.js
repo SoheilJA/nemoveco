@@ -139,14 +139,19 @@ function initMarquee() {
   $$('.marquee-track').forEach((track) => {
     if (track.dataset.cloned) return
     track.dataset.cloned = '1'
-    const items = Array.from(track.children)
+    // track may hold a single wrapper div (index.html) — clone its item children
+    const hosts = [...track.children].every((c) => c.classList.contains('flex'))
+      ? [...track.children]
+      : [track]
+    const source = hosts[0]
+    const items = Array.from(source.children)
     if (items.length < 2) return
-    const copy = items.map((n) => {
+    const copies = items.map((n) => {
       const c = n.cloneNode(true)
       c.setAttribute('aria-hidden', 'true')
       return c
     })
-    copy.forEach((c) => track.appendChild(c))
+    copies.forEach((c) => source.appendChild(c))
   })
 }
 
