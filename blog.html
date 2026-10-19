@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>وبلاگ | مقالات کسب و کار، فروش و منابع انسانی نِمُو</title>
+  <meta name="description" content="مقالات نمو؛ مشاوره کسب و کار، فروش و بازاریابی، وصول مطالبات، منابع انسانی و مهارت‌های نرم.">
+  <meta name="theme-color" content="#f6f1e6">
+  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('nemo-theme');
+        var d = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var e = document.documentElement;
+        e.classList.toggle('dark', d);
+        e.dataset.theme = d ? 'dark' : 'light';
+        e.classList.add('js');
+      } catch (err) {
+        document.documentElement.classList.add('js');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="blog" class="bg-cream text-ink font-sans">
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-logo relative grid place-items-center gap-4">
+      <svg width="86" height="86" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path class="sprout-path" d="M24 44c0-10 0-14 .5-19" stroke="var(--n-gold)" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sprout-path p2" d="M24.5 25c-.8-6.6-5.6-11-13.5-11.2C11.6 22.2 16.6 25.7 24.5 25Z" stroke="var(--n-emerald)" stroke-width="2" stroke-linejoin="round"/>
+        <path class="sprout-path p3" d="M25.5 21c.6-5 4-7.8 10-7.8-.4 6.4-3.6 8.4-10 7.8Z" stroke="var(--n-gold-soft)" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="25" cy="6.5" r="2.4" fill="var(--n-gold-soft)"/>
+      </svg>
+      <span class="preloader-word text-3xl font-black text-gradient-gold">نِمُو</span>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div id="site-header"></div>
+
+  <main id="main" data-blog>
+
+    <section class="relative overflow-hidden pt-16 pb-10 lg:pt-24">
+      <div class="aurora aurora-a absolute -top-32 -start-32" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-5">
+        <p class="eyebrow justify-center" data-reveal="up">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--n-gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13C12 9 9 6.5 4.5 6.5 4.5 11 7.5 13 12 13Z"/><path d="M12 10c0-3.2 2.4-5 6.5-5C18.5 8.6 16.4 10 12 10Z"/></svg>
+          <span>دانش کسب‌وکار</span>
+        </p>
+        <h1 class="text-4xl sm:text-5xl font-black" data-reveal="up" data-delay="0.1">وبلاگ</h1>
+      </div>
+    </section>
+
+    <section class="relative py-10 lg:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+
+        <div class="glass rounded-3xl p-5 sm:p-6 flex flex-wrap items-center gap-4" data-reveal="up">
+          <div class="flex flex-wrap gap-2" role="group" aria-label="دسته‌بندی مقالات">
+            <button type="button" class="chip is-on" data-blog-cat="all" aria-pressed="true">همه</button>
+            <button type="button" class="chip" data-blog-cat="مشاوره و کسب‌وکار" aria-pressed="false">مشاوره و کسب‌وکار</button>
+            <button type="button" class="chip" data-blog-cat="فروش و بازاریابی" aria-pressed="false">فروش و بازاریابی</button>
+            <button type="button" class="chip" data-blog-cat="منابع انسانی" aria-pressed="false">منابع انسانی</button>
+            <button type="button" class="chip" data-blog-cat="مهارت‌های نرم" aria-pressed="false">مهارت‌های نرم</button>
+            <button type="button" class="chip" data-blog-cat="مالی و مطالبات" aria-pressed="false">مالی و مطالبات</button>
+          </div>
+          <div class="relative ms-auto flex-1 min-w-56">
+            <label class="sr-only" for="blog-search">جست‌وجوی مقاله</label>
+            <svg class="absolute top-1/2 -translate-y-1/2 start-4 text-ink-faint pointer-events-none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+            <input class="field !ps-11" id="blog-search" type="search" placeholder="جست‌وجوی عنوان مقاله…" data-blog-search>
+          </div>
+        </div>
+
+        <!-- cards link to "#" placeholders until real articles are published -->
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="مشاوره و کسب‌وکار" data-search="مشاوره کسب و کار شرکت برتر دنیا">
+            <span class="block relative h-40 bg-gradient-to-bl from-gold/30 via-pearl to-emerald/20">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M20 100C60 60 50 70 100 45 150 20 130 60 180 35" stroke="var(--n-gold)" stroke-width="1.4" stroke-linecap="round"/><circle cx="100" cy="45" r="4" fill="var(--n-gold-soft)"/><circle cx="180" cy="35" r="3" fill="var(--n-emerald)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">مشاوره و کسب‌وکار</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">مشاوره کسب و کار</span>
+              <span class="block text-sm text-ink-faint leading-7">۵ شرکت برتر مشاوره کسب‌وکار در دنیا</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="فروش و بازاریابی" data-search="مشتری ناراضی انتقاد فرصت ارتباط">
+            <span class="block relative h-40 bg-gradient-to-bl from-emerald/30 via-pearl to-gold/20">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><circle cx="70" cy="65" r="26" stroke="var(--n-emerald)" stroke-width="1.4"/><path d="m88 83 20 20" stroke="var(--n-emerald)" stroke-width="1.6" stroke-linecap="round"/><circle cx="150" cy="40" r="3" fill="var(--n-gold-soft)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">فروش و بازاریابی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">مشتری ناراضی</span>
+              <span class="block text-sm text-ink-faint leading-7">چگونه با مشتری ناراضی ارتباط برقرار کنیم؟ از مواجهه با انتقادها تا تبدیل آنها به فرصت</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="مالی و مطالبات" data-search="وصول مطالبات جریان نقدی سازمان استراتژی">
+            <span class="block relative h-40 bg-gradient-to-bl from-gold/30 via-pearl to-sage/25">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M40 95V55M70 95V35M100 95V65M130 95V45M160 95V70" stroke="var(--n-gold)" stroke-width="2" stroke-linecap="round"/><path d="M35 105h130" stroke="var(--n-gold)" stroke-width="1.2"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">مالی و مطالبات</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">وصول مطالبات</span>
+              <span class="block text-sm text-ink-faint leading-7">استراتژی‌های مؤثر در وصول مطالبات و حفظ جریان نقدی سازمان</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="مشاوره و کسب‌وکار" data-search="استارت آپ کسب و کار نوپا معنا">
+            <span class="block relative h-40 bg-gradient-to-bl from-emerald/25 via-pearl to-gold/25">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M100 20c-20 0-32 12-32 28 0 18 14 24 14 38h36c0-14 14-20 14-38 0-16-12-28-32-28Z" stroke="var(--n-gold)" stroke-width="1.4"/><path d="M88 98h24M90 106h20" stroke="var(--n-emerald)" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">مشاوره و کسب‌وکار</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">استارت آپ</span>
+              <span class="block text-sm text-ink-faint leading-7">کسب و کار نوپا (استارت آپ) به چه معناست؟</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="منابع انسانی" data-search="کارمند پرخاشگر عصبی برخورد نحوه">
+            <span class="block relative h-40 bg-gradient-to-bl from-gold/25 via-pearl to-emerald/30">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><circle cx="100" cy="60" r="30" stroke="var(--n-gold)" stroke-width="1.4"/><path d="M100 30v60M70 60h60" stroke="var(--n-gold)" stroke-width="1" stroke-opacity="0.6"/><path d="M92 52c0-6 16-6 16 2 0 7-16 7-16 14 0 8 16 8 16 2" stroke="var(--n-emerald)" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">منابع انسانی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">کارمند پرخاشگر و عصبی</span>
+              <span class="block text-sm text-ink-faint leading-7">نحوه برخورد با کارمند پرخاشگر و عصبی</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="مهارت‌های نرم" data-search="مهارت متقاعدسازی چیست کلید موفقیت">
+            <span class="block relative h-40 bg-gradient-to-bl from-sage/30 via-pearl to-gold/20">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M60 95c10-25 25-40 50-45 15-3 25 2 30 12" stroke="var(--n-gold)" stroke-width="1.6" stroke-linecap="round"/><path d="M140 62c8 2 12 8 12 16" stroke="var(--n-emerald)" stroke-width="1.6" stroke-linecap="round"/><circle cx="152" cy="48" r="4" fill="var(--n-gold-soft)"/><circle cx="60" cy="95" r="3" fill="var(--n-emerald)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">مهارت‌های نرم</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">مهارت متقاعدسازی</span>
+              <span class="block text-sm text-ink-faint leading-7">متقاعدسازی چیست؟ کلید موفقیت در دنیای پیچیده امروز</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="فروش و بازاریابی" data-search="شرکت پخش چیست نقش انواع اهمیت بازار">
+            <span class="block relative h-40 bg-gradient-to-bl from-gold/25 via-pearl to-sage/30">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><rect x="60" y="30" width="34" height="24" rx="5" stroke="var(--n-gold)" stroke-width="1.4"/><rect x="108" y="72" width="34" height="24" rx="5" stroke="var(--n-emerald)" stroke-width="1.4"/><path d="M77 54v18a8 8 0 0 0 8 8h23" stroke="var(--n-gold)" stroke-width="1.2" stroke-dasharray="4 5"/><circle cx="125" cy="60" r="3" fill="var(--n-gold-soft)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">فروش و بازاریابی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">شرکت پخش</span>
+              <span class="block text-sm text-ink-faint leading-7">شرکت پخش چیست؟ نقش، انواع و اهمیت آن در بازار</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="فروش و بازاریابی" data-search="استراتژی فروش نقاط کلیدی تجزیه تحلیل اجرا">
+            <span class="block relative h-40 bg-gradient-to-bl from-emerald/25 via-pearl to-gold/25">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M30 100h140" stroke="var(--n-gold)" stroke-width="1.2"/><path d="M50 100V70l16 10V50l16 10V60l16 26" stroke="var(--n-emerald)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="98" cy="86" r="3" fill="var(--n-gold-soft)"/><path d="M130 60h34M130 74h22M130 88h40" stroke="var(--n-gold)" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">فروش و بازاریابی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">استراتژی فروش</span>
+              <span class="block text-sm text-ink-faint leading-7">نقاط کلیدی در استراتژی فروش: از تجزیه و تحلیل تا اجرا</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="منابع انسانی" data-search="تعهدنامه استخدامی ترک تشریفات">
+            <span class="block relative h-40 bg-gradient-to-bl from-gold/30 via-pearl to-emerald/15">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M60 88c0-14 12-24 40-24s40 10 40 24" stroke="var(--n-gold)" stroke-width="1.4"/><rect x="70" y="88" width="60" height="18" rx="4" stroke="var(--n-emerald)" stroke-width="1.4"/><path d="M100 64V40m0 0-8 8m8-8 8 8" stroke="var(--n-gold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 34c4-8 14-12 22-12" stroke="var(--n-gold-soft)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 5"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">منابع انسانی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">تعهدنامه استخدامی</span>
+              <span class="block text-sm text-ink-faint leading-7">تعهدنامه استخدامی با ترک تشریفات</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="فروش و بازاریابی" data-search="نمایشگاه های تخصصی توسعه کسب و کار">
+            <span class="block relative h-40 bg-gradient-to-bl from-sage/25 via-pearl to-gold/25">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><path d="M30 100 100 40l70 60" stroke="var(--n-gold)" stroke-width="1.4"/><path d="M50 100V76h24v24M84 100V64h32v36M126 100V78h24v22" stroke="var(--n-emerald)" stroke-width="1.4" stroke-linejoin="round"/><path d="M30 100h140" stroke="var(--n-gold)" stroke-width="1.2"/><circle cx="100" cy="40" r="3.5" fill="var(--n-gold-soft)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">فروش و بازاریابی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">نمایشگاه های تخصصی توسعه کسب و کار</span>
+              <span class="block text-sm text-ink-faint leading-7">استراتژی و فرآیند اجرایی حضور در نمایشگاه‌های تخصصی</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="مهارت‌های نرم" data-search="اصول فنون مذاکره بهترین کتاب های آموزش">
+            <span class="block relative h-40 bg-gradient-to-bl from-gold/20 via-pearl to-emerald/25">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><rect x="56" y="34" width="52" height="62" rx="6" stroke="var(--n-gold)" stroke-width="1.4"/><path d="M64 50h36M64 62h36M64 74h22" stroke="var(--n-gold)" stroke-width="1.1" stroke-linecap="round"/><rect x="112" y="44" width="34" height="26" rx="5" stroke="var(--n-emerald)" stroke-width="1.4"/><path d="M112 76c12-6 22-6 34 0" stroke="var(--n-emerald)" stroke-width="1.2" stroke-linecap="round"/><circle cx="129" cy="57" r="3" fill="var(--n-gold-soft)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">مهارت‌های نرم</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">اصول و فنون مذاکره</span>
+              <span class="block text-sm text-ink-faint leading-7">بهترین کتاب‌های آموزش اصول و فنون مذاکره</span>
+            </span>
+          </a>
+
+          <a href="#" class="blog-card glass rounded-3xl overflow-hidden block group" data-category="فروش و بازاریابی" data-search="استراتژی های بازاریابی قدرتمند محصولات فروش واگذار">
+            <span class="block relative h-40 bg-gradient-to-bl from-emerald/20 via-pearl to-gold/30">
+              <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 200 130" fill="none" aria-hidden="true"><circle cx="100" cy="65" r="34" stroke="var(--n-gold)" stroke-width="1.4"/><circle cx="100" cy="65" r="18" stroke="var(--n-emerald)" stroke-width="1.2" stroke-dasharray="4 6"/><path d="M100 31v-9M100 108v9M66 65h-9M143 65h9" stroke="var(--n-gold)" stroke-width="1.4" stroke-linecap="round"/><circle cx="100" cy="65" r="4" fill="var(--n-gold-soft)"/></svg>
+              <span class="absolute bottom-3 start-3 rounded-full bg-deep/85 px-3 py-1 text-[0.68rem] font-bold text-gold-soft backdrop-blur-sm">فروش و بازاریابی</span>
+            </span>
+            <span class="block p-6 space-y-2.5">
+              <span class="block text-lg font-extrabold group-hover:text-gold transition-colors">استراتژی‌های بازاریابی قدرتمند</span>
+              <span class="block text-sm text-ink-faint leading-7">چگونه محصولاتتان را به فروش واگذار کنید</span>
+            </span>
+          </a>
+        </div>
+
+        <div data-blog-empty hidden class="glass rounded-3xl p-12 text-center space-y-4">
+          <svg class="mx-auto text-gold" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/><path d="M8.5 11h5"/></svg>
+          <p class="font-bold">مقاله‌ای یافت نشد</p>
+          <p class="text-sm text-ink-faint">عبارت جست‌وجو یا دسته‌بندی را تغییر دهید.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/main.bundle.js" defer></script>
+</body>
+</html>

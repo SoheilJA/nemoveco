@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>آکادمی نمو | به‌زودی</title>
+  <meta name="description" content="آکادمی نمو؛ آموزش‌های تخصصی کسب‌وکار، فروش و منابع انسانی — به‌زودی راه‌اندازی می‌شود.">
+  <meta name="theme-color" content="#f6f1e6">
+  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('nemo-theme');
+        var d = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var e = document.documentElement;
+        e.classList.toggle('dark', d);
+        e.dataset.theme = d ? 'dark' : 'light';
+        e.classList.add('js');
+      } catch (err) {
+        document.documentElement.classList.add('js');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="academy" class="bg-cream text-ink font-sans">
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-logo relative grid place-items-center gap-4">
+      <svg width="86" height="86" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path class="sprout-path" d="M24 44c0-10 0-14 .5-19" stroke="var(--n-gold)" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sprout-path p2" d="M24.5 25c-.8-6.6-5.6-11-13.5-11.2C11.6 22.2 16.6 25.7 24.5 25Z" stroke="var(--n-emerald)" stroke-width="2" stroke-linejoin="round"/>
+        <path class="sprout-path p3" d="M25.5 21c.6-5 4-7.8 10-7.8-.4 6.4-3.6 8.4-10 7.8Z" stroke="var(--n-gold-soft)" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="25" cy="6.5" r="2.4" fill="var(--n-gold-soft)"/>
+      </svg>
+      <span class="preloader-word text-3xl font-black text-gradient-gold">نِمُو</span>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="site-header"></div>
+
+  <main id="main" class="relative min-h-[70vh] grid place-items-center overflow-hidden px-4 py-24">
+    <div class="aurora aurora-a absolute -top-32 -start-32" aria-hidden="true"></div>
+    <div class="aurora aurora-b absolute -bottom-40 -end-32 opacity-60" aria-hidden="true"></div>
+
+    <div class="relative glass rounded-[2.5rem] max-w-xl w-full p-10 sm:p-14 text-center space-y-7 conic-border" data-reveal="scale">
+      <div class="relative mx-auto w-fit">
+        <span class="absolute -inset-5 rounded-full bg-gold/10 blur-xl animate-pulse-soft" aria-hidden="true"></span>
+        <svg width="110" height="110" viewBox="0 0 48 48" fill="none" class="relative animate-breathe" aria-hidden="true">
+          <path d="M24 44c0-10 0-14 .5-19" stroke="var(--n-gold)" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M24.5 25c-.8-6.6-5.6-11-13.5-11.2C11.6 22.2 16.6 25.7 24.5 25Z" fill="var(--n-emerald)" fill-opacity="0.12" stroke="var(--n-emerald)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M25.5 21c.6-5 4-7.8 10-7.8-.4 6.4-3.6 8.4-10 7.8Z" fill="var(--n-gold-soft)" fill-opacity="0.12" stroke="var(--n-gold-soft)" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="25" cy="6.5" r="2.4" fill="var(--n-gold-soft)"/>
+        </svg>
+      </div>
+
+      <div class="space-y-3">
+        <h1 class="text-3xl sm:text-4xl font-black">آکادمی نمو</h1>
+        <p class="text-xl font-bold text-gold">به‌زودی</p>
+      </div>
+
+      <p class="text-ink-soft leading-9">
+        این بخش در حال رشد است. آموزش‌های تخصصی تیم نمو به‌زودی اینجا جوانه می‌زنند.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 pt-1">
+        <a href="index.html" class="btn-gold shimmer magnetic">بازگشت به خانه</a>
+        <a href="contact.html" class="btn-ghost magnetic">تماس با ما</a>
+      </div>
+
+      <div class="flex items-center justify-center gap-2 text-ink-faint" aria-hidden="true">
+        <span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-soft"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald animate-pulse-soft" style="animation-delay:0.4s"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-gold-soft animate-pulse-soft" style="animation-delay:0.8s"></span>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/main.bundle.js" defer></script>
+</body>
+</html>
